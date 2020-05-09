@@ -13,6 +13,7 @@ var banned = [];
 banUpperCase("./public/", "");
 // Define the sequence of functions to be called for each request
 app.use(helmet());
+app.use(require('sanitize').middleware);
 app.use(ban);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

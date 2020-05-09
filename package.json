@@ -1,7 +1,7 @@
 {
-  "name": "kaedim_website",
+  "name": "ics_codetest",
   "version": "1.0.0",
-  "description": "Website for Kaedim",
+  "description": "Code test for ICS application",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,19 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomanBromidge/KaedimWebsite.git"
+    "url": "git+https://github.com/RomanBromidge/icscodetest.git"
   },
-  "author": "Roman Bromidge & Konstantina Psoma",
+  "author": "Roman Bromidge",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RomanBromidge/KaedimWebsite/issues"
+    "url": "https://github.com/RomanBromidge/icscodetest/issues"
   },
-  "homepage": "https://github.com/RomanBromidge/KaedimWebsite#readme",
+  "homepage": "https://github.com/RomanBromidge/icscodetest#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "helmet": "^3.21.2"
+    "helmet": "^3.21.2",
+    "request": "^2.88.2",
+    "sanitize": "^2.1.0"
   }
 }

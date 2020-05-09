@@ -1,4 +1,8 @@
-# KaedimWebsite
-Repo for the Kaedim website
+# ICS Code Test
+Repo for my ICS code test
 
-Install nodemon then do 'nodemon' to refresh server after every change or use 'npm start' to start manually and refresh manually.
+To run you must have installed Node.js and npm.
+
+To install dependencies run 'npm i'
+
+Use 'npm start' to start the app at http://localhost:8080

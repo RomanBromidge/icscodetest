@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<%- include('partials/head'); %>
+
+    <body id="page-top" class="hidden">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <img src="/img/movie.png" height="30" width="auto" alt="" />
+                <a class="ml-3 navbar-brand js-scroll-trigger" href="/#page-top">MovieTime</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/#search">Search</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Section -->
+        <section class="page-section bg-primary" id="search">
+            <div class="container">
+
+              <div class="card mb-3">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <% if (results.Poster === 'N/A') { %>
+                      <img src="/img/film-poster-placeholder.png" style="width: 100%;" class="card-img" alt="..."></img>
+                    <% } else { %>
+                      <img src="<%= results.Poster %>" class="card-img" alt="..."></img>
+                    <% } %>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h1 class="card-title"><%= results.Title %></h1>
+                      <p class="card-text">Released: <%= results.Released %></p>
+                      <p class="card-text">Rated: <%= results.Rated %></p>
+                      <p class="card-text">Runtime: <%= results.Runtime %></p>
+                      <p class="card-text">Genre: <%= results.Genre %></p>
+                      <p class="card-text">Director: <%= results.Director %></p>
+                      <p class="card-text">Writer: <%= results.Writer %></p>
+                      <p class="card-text">Actors: <%= results.Actors %></p>
+
+                      <p class="card-text">Plot: <%= results.Plot %></p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </section>
+
+        <%- include('partials/footer'); %>
+
+          <%- include('partials/script_section'); %>
+
+    </body>
+
+</html>

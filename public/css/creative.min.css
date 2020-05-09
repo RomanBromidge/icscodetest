@@ -26,8 +26,8 @@
     --white: #fff;
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #f4623a;
-    --secondary: #6c757d;
+    --primary: #79D9CF;
+    --secondary: #4B94F2;
     --success: #28a745;
     --info: #17a2b8;
     --warning: #ffc107;
@@ -2381,7 +2381,7 @@ textarea.form-control.is-invalid {
 .btn.focus,
 .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(244, 98, 58, .25)
+    box-shadow: 0 0 0 .2rem rgba(45, 75, 166, .25)
 }
 
 .btn.disabled,
@@ -2396,19 +2396,19 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #ea8c55;
-    border-color: #c75146
+    background-color: #79D9CF;
+    border-color: #79D9CF
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #c75146;
-    border-color: #c75146
+    background-color: #377BA6;
+    border-color: #377BA6
 }
 
 .btn-primary.focus,
 .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(246, 122, 88, .5)
+    box-shadow: 0 0 0 .2rem rgba(45, 75, 166, .5)
 }
 
 .btn-primary.disabled,
@@ -4825,14 +4825,14 @@ input[type=submit].btn-block {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #f4623a;
+    color: #79D9CF;
     background-color: #fff;
-    border: 1px solid #dee2e6
+    border: 1px solid #79D9CF
 }
 
 .page-link:hover {
     z-index: 2;
-    color: #d6370c;
+    color: #377BA6;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6
@@ -4858,8 +4858,8 @@ input[type=submit].btn-block {
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #f4623a;
-    border-color: #f4623a
+    background-color: #4B94F2;
+    border-color: #4B94F2;
 }
 
 .page-item.disabled .page-link {
@@ -6493,25 +6493,25 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #ea8c55!important
+    background-color: #79D9CF!important
 }
 
 a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    background-color: #ee3e0d!important
+    background-color: #377BA6!important
 }
 
 .bg-secondary {
-    background-color: #6c757d!important
+    background-color: #4B94F2!important
 }
 
 a.bg-secondary:focus,
 a.bg-secondary:hover,
 button.bg-secondary:focus,
 button.bg-secondary:hover {
-    background-color: #545b62!important
+    background-color: #2D4BA6!important
 }
 
 .bg-success {
@@ -9661,21 +9661,21 @@ button.bg-dark:hover {
 }
 
 .text-primary {
-    color: #ea8c55!important
+    color: #79D9CF!important
 }
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #d6370c!important
+    color: #377BA6!important
 }
 
 .text-secondary {
-    color: #6c757d!important
+    color: #4B94F2!important
 }
 
 a.text-secondary:focus,
 a.text-secondary:hover {
-    color: #494f54!important
+    color: #2D4BA6!important
 }
 
 .text-success {
@@ -9869,7 +9869,7 @@ html {
 hr.divider {
     max-width: 3.25rem;
     border-width: .2rem;
-    border-color: #ea8c55
+    border-color: #377BA6
 }
 
 hr.light {
@@ -9964,7 +9964,7 @@ hr.light {
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 72px);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, .8) 0, rgba(92, 77, 66, .8) 100%), url(../img/mountain_unsplash2.jpg);
+    background: linear-gradient(to bottom, rgba(55, 123, 166, .8) 0, rgba(55, 123, 166, .8) 100%), url(../img/bg-masthead.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<%- include('partials/head'); %>
+
+    <body id="page-top" class="hidden">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <img src="/img/movie.png" height="30" width="auto" alt="" />
+                <a class="ml-3 navbar-brand js-scroll-trigger" href="/#page-top">MovieTime</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/#search">Search</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Section -->
+        <section class="page-section bg-primary" id="search">
+            <div class="container">
+              <!-- pagination navbar -->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=1" aria-label="Previous">
+                      <span aria-hidden="true"><i class="fas fa-angle-double-left"></i></span>
+                    </a>
+                  </li>
+                  <% if (page_num == 1) { %>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=3">3</a></li>
+                  <% } else if (page_num == 100) { %>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=98">98</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=99">99</a></li>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=100">100</a></li>
+                  <% } else { %>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= page_num-1 %>"><%= page_num-1 %></a></li>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= page_num %>"><%= page_num %></a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= parseInt(page_num)+1 %>"><%= parseInt(page_num)+1 %></a></li>
+                  <% } %>
+                  <li class="page-item">
+                    <a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=100" aria-label="Next">
+                      <span aria-hidden="true"><i class="fas fa-angle-double-right"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <!-- List of movies found -->
+              <ul class="list-group">
+              <% if (!results) { %>
+                <h1>Oops! No results found...</h1>
+              <% } else { %>
+                <% for (var i = 0; i < results.length; i++) { %>
+                  <li class="media">
+                    <div class="card mb-3">
+                      <div class="row no-gutters">
+                        <div class="col-md-2">
+                          <% if (results[i].Poster === 'N/A') { %>
+                            <img src="/img/film-poster-placeholder.png" style="width: 100%;" class="card-img" alt="..."></img>
+                          <% } else { %>
+                            <img src="<%= results[i].Poster %>" class="card-img" alt="..."></img>
+                          <% } %>
+                        </div>
+                        <div class="col-md-10">
+                          <div class="card-body">
+                            <h5 class="card-title"><%= results[i].Title %></h5>
+                            <p class="card-text">Release date: <%= results[i].Year %></p>
+                            <a href="/info/<%= results[i].imdbID %>"><button class="mt-4 btn btn-secondary">More Details</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+              <% } %>
+              </ul>
+
+              <!-- Repeated pagination navigation -->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=1" aria-label="Previous">
+                      <span aria-hidden="true"><i class="fas fa-angle-double-left"></i></span>
+                    </a>
+                  </li>
+                  <% if (page_num == 1) { %>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=3">3</a></li>
+                  <% } else if (page_num == 100) { %>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=98">98</a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=99">99</a></li>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=100">100</a></li>
+                  <% } else { %>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= page_num-1 %>"><%= page_num-1 %></a></li>
+                    <li class="page-item active"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= page_num %>"><%= page_num %></a></li>
+                    <li class="page-item"><a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=<%= parseInt(page_num)+1 %>"><%= parseInt(page_num)+1 %></a></li>
+                  <% } %>
+                  <li class="page-item">
+                    <a class="page-link" href="/search?title=<%= search_title %>&amp;page_num=100" aria-label="Next">
+                      <span aria-hidden="true"><i class="fas fa-angle-double-right"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+        </section>
+
+        <%- include('partials/footer'); %>
+
+          <%- include('partials/script_section'); %>
+
+    </body>
+
+</html>
