@@ -1,0 +1,27 @@
+{
+  "name": "kaedim_website",
+  "version": "1.0.0",
+  "description": "Website for Kaedim",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanBromidge/KaedimWebsite.git"
+  },
+  "author": "Roman Bromidge & Konstantina Psoma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanBromidge/KaedimWebsite/issues"
+  },
+  "homepage": "https://github.com/RomanBromidge/KaedimWebsite#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "helmet": "^3.21.2"
+  }
+}
